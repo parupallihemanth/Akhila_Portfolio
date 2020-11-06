@@ -53,6 +53,9 @@ const useStyles = makeStyles( (theme) => ({
         },
         borderRadius : '15px',
         boxShadow: '0 3px 10px rgba(0,0,0,0.5)',
+        [ theme.breakpoints.down('md')] :{
+            width : '70%'
+        },
         [ theme.breakpoints.down('xs')] :{
             width : '85%'
         },
@@ -64,7 +67,9 @@ const useStyles = makeStyles( (theme) => ({
 
 function AboutMe() {
     const classes = useStyles();
-
+    const theme = useTheme();
+    const matchMD = useMediaQuery(theme.breakpoints.down("md"));
+    const matchSM = useMediaQuery(theme.breakpoints.down("SM"));
     useEffect( () => {
         Aos.init({ duration: 2000})
 }, [])
@@ -82,7 +87,7 @@ function AboutMe() {
                 great impact on society.</p>
             </Grid> 
             <Grid item  sm className={classes.aboutPart}>
-                <img data-aos="fade-left" src={main1} className={classes.mainImage} height="85%"  />
+                <img data-aos="fade-left" src={main1} className={classes.mainImage} height={ matchMD ? "60%" : "85%"  } />
             </Grid>
             
         </Grid>

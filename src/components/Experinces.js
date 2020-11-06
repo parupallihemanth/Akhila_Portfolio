@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     experienceContainer : {
         background : '#0c2340',
         height : '100vh',
+        [ theme.breakpoints.down('xs')] :{
+          height : '150vh',
+      },
         
     },
     sectionTitle : {
@@ -33,14 +36,13 @@ const useStyles = makeStyles((theme) => ({
       color : '#32CD32',
       fontWeight :'bold',
       fontFamily : 'roboto',
-      marginLeft : '1.5em',
-      marginTop : '2em',
+       marginLeft : '1.5em',
+      // marginTop : '2em',
       letterSpacing : '2px'
     },
     education : {
       color : '#FFFFF0',
       fontWeight :'bold',
-      
       marginLeft : '1em',
       fontFamily : 'roboto',
       letterSpacing : '2px'
@@ -49,8 +51,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop : '2em',
    },
    educationItem : {
-   
-    marginLeft : '3em',
+   marginLeft : '3em',
     
  },
     experinceCard : {
@@ -74,7 +75,7 @@ function Experinces() {
   const matchMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchSM = useMediaQuery(theme.breakpoints.down("SM"));
   return (
-    <Grid container className={ classes.experienceContainer} id="experience">
+    <Grid container className={ classes.experienceContainer} justify="flex-start" id="experience">
        <Grid item>
           <Typography className={classes.sectionTitle} variant="h5"> Education</Typography>
           <Grid data-aos="fade-right" container justify="center" className={classes.educationContainer}>

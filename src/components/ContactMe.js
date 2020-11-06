@@ -3,7 +3,9 @@ import Lottie from 'react-lottie';
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, useTheme} from '@material-ui/core/styles'
 import Typography from "@material-ui/core/Typography";
-import Contact from '../Animations/8645-perfume-app-animation-2.json'
+import Contact from '../Animations/8645-perfume-app-animation-2.json';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
 
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
@@ -12,12 +14,14 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';   
 import YouTubeIcon from '@material-ui/icons/YouTube';
-const useStyles = makeStyles( () => ({
+const useStyles = makeStyles( (theme) => ({
   
     contactContainer : {
         background : "#fdf0f2",
         height : '90vh',
-       
+        [ theme.breakpoints.down('xs')] :{
+            height : '150vh',
+        },
     },
     sectionTitle : {
         fontFamily : 'roboto',
@@ -30,10 +34,16 @@ const useStyles = makeStyles( () => ({
         letterSpacing : '2px'
     },
     contactLottie : {
-        marginLeft : '4em'
+        marginLeft : '4em',
+        [ theme.breakpoints.down('xs')] :{
+            marginLeft : '0em',
+        },
     },
     contact :{
-        marginTop: '2em'
+        marginTop: '2em',
+        [ theme.breakpoints.down('md')] :{
+            marginTop: '-25em',
+        },
     },
     p :{
         fontWeight : '700',
@@ -47,6 +57,10 @@ const useStyles = makeStyles( () => ({
 
 function ContactMe() {
     const classes = useStyles();
+    const theme = useTheme();
+    const matchMD = useMediaQuery(theme.breakpoints.down("md"));
+    const matchSM = useMediaQuery(theme.breakpoints.down("SM"));
+
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -65,9 +79,9 @@ function ContactMe() {
             </Grid>
 
             <Grid item className={classes.contact}>
-                <Typography variant="h4" className={classes.sectionTitle}> Get in touch  </Typography>
-                <Typography variant="h6" className={classes.p}>If you have any questions, please feel free to drop me a message. I'll get back to you as <br />soon  as possible. That's a promise.</Typography>
-                <Grid container>
+                <Typography variant="h4" align={ matchMD ? "center" : 'undefined'} className={classes.sectionTitle}> Get in touch  </Typography>
+                <Typography variant="h6" align={ matchMD ? "center" : 'undefined'} >If you have any questions, please feel free to drop me a message. I'll get back to you as <br />soon  as possible. That's a promise.</Typography>
+                <Grid container justify={ matchMD ? "center" : 'undefined'}>
                     <Grid item>
                         <PhoneIphoneIcon fontSize="large" />
                     </Grid>
@@ -76,7 +90,7 @@ function ContactMe() {
                     </Grid>
 
                 </Grid>
-                <Grid container>
+                <Grid container justify={ matchMD ? "center" : 'undefined'}>
                     <Grid item>
                         <MailOutlineIcon fontSize="large"/>
                     </Grid>
@@ -85,7 +99,7 @@ function ContactMe() {
                     </Grid>
 
                 </Grid>
-                <Grid container direction="row" style={{ marginTop:'2em'}}>
+                <Grid container direction="row" style={{ marginTop:'2em'}} justify={ matchMD ? "center" : 'undefined'}>
                     
                     <Grid item>
                     <LinkedInIcon fontSize="large" />

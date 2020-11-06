@@ -22,10 +22,14 @@ const useStyles = makeStyles( (theme) => ({
         background : '#0c2340',
         marginTop : '4em',
         height : '400px',
-        // [ theme.breakpoints.down('xs')] :{
-        //     height :'200px'
-        // },
-        overflow : 'visible',
+        [ theme.breakpoints.down('sm')] :{
+            height :'700px'
+        },
+        [ theme.breakpoints.down('xs')] :{
+            height :'500px'
+        },
+         overflow : 'visible',
+        // overflow : 'hidden'
         // width : '100%'
     },
     headerText :{
@@ -33,7 +37,10 @@ const useStyles = makeStyles( (theme) => ({
         marginTop : '1em',
         color : '#fff',
         letterSpacing : '2px',
-        
+        [ theme.breakpoints.down('xs')] :{
+            fontWeight:'900',
+            fontSize : '700'
+        },
        },
 
        socialContainer : {
@@ -54,22 +61,15 @@ const useStyles = makeStyles( (theme) => ({
         }
        },
 
+       headerLottie :{
+        // [ theme.breakpoints.down('md')] :{
+        //     marginTop : '5em'
+        // }
+       }
+
        
 
-    // mainImage :{
-    //     marginTop : '6em',
-    //     borderRadius : '15px',
-    //    boxShadow: '0 3px 10px rgba(0,0,0,0.5)',
-    //     [theme.breakpoints.down("md")] : {
-    //         marginTop : '5em',
-    //         // marginLeft : 'em'
-    //     },
-    //     [theme.breakpoints.down("sm")] : {
-    //         marginTop : '0em',
-    //         marginLeft : '4em'
-    //     }
-       
-    //  }
+    
 
 }))
 
@@ -95,17 +95,17 @@ function Header() {
       };
 
     return (
-        <Grid data-aos="fade-down" container  className={classes.headerContainer} direction={ matchMD ? "row" : "column"} justify="space-between"   id="about" >
+        <Grid  container  className={classes.headerContainer} direction={ matchMD ? "row" : "column"} justify= "space-between"   id="about" >
             
-            <Grid item >
-                <Typography  variant= { matchXS ? "h5" : "h2" } className={classes.headerText}>Hello, I'm <br />Akhila Sri Garikapati.</Typography>
+            <Grid item md >
+                <Typography data-aos="fade-right" variant= { matchXS ? "h5" : "h2" } className={classes.headerText}>Hello, I'm <br />Akhila Sri Garikapati.</Typography>
                 <LinkedInIcon  className={classes.socialIcon}/>
                 <YouTubeIcon  className={classes.socialIcon}/>
                 <InstagramIcon className={classes.socialIcon}/>
                 <FacebookIcon  className={classes.socialIcon}/>
             </Grid>
             
-            <Grid item >
+            <Grid item md className={classes.headerLottie}>
             <Lottie options={defaultOptions}  height={ matchXS ? 200 : 400} width={400}  />
             </Grid>
             
