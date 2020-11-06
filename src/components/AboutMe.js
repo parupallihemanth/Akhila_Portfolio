@@ -69,7 +69,7 @@ function AboutMe() {
         Aos.init({ duration: 2000})
 }, [])
     return (
-        <Grid data-aos="fade-right" container className={ classes.aboutContainer} spacing={8} justify="center">
+        <Grid  container className={ classes.aboutContainer} spacing={8} justify="center">
             <Grid item sm >
                 <Typography variant="h5">I'm a <span className={classes.role}>Business Analyst</span></Typography>
                 <p className={classes.p}>Hellenism was the combination of Greek, Persian, and Egyptian cultures. During this
@@ -81,8 +81,8 @@ function AboutMe() {
                 produce many different kinds of art. New forms of math,  science,  and design made a
                 great impact on society.</p>
             </Grid> 
-            <Grid item data-aos="fade-left" sm className={classes.aboutPart}>
-                <img  src={main1} className={classes.mainImage} height="85%"  />
+            <Grid item  sm className={classes.aboutPart}>
+                <img data-aos="fade-left" src={main1} className={classes.mainImage} height="85%"  />
             </Grid>
             
         </Grid>

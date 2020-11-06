@@ -57,7 +57,7 @@ function ContactMe() {
       };
     return (
 
-        <Grid container  className={classes.contactContainer} id="contact" spacing={6}>
+        <Grid container  className={classes.contactContainer} id="contact" spacing={2}>
             
             
             <Grid item className={classes.contactLottie}>
@@ -85,13 +85,13 @@ function ContactMe() {
                     </Grid>
 
                 </Grid>
-                <Grid container direction="column" alignItems="stretch">
-                    <Typography variant="h5" style={{ fontWeight:"bold", marginTop:'1em',marginBottom:'1em'}}>Social</Typography>
+                <Grid container direction="row" style={{ marginTop:'2em'}}>
+                    
                     <Grid item>
                     <LinkedInIcon fontSize="large" />
                     </Grid>
                     <Grid>
-                    <InstagramIcon fontSize="large" style={{ marginTop:'1em',marginBottom:'1em'}}/>
+                    <InstagramIcon fontSize="large" style={{ marginLeft: '1em', marginRight:'1em'}}/>
                     </Grid>
                     <Grid item>
                     <FacebookIcon fontSize="large"/>

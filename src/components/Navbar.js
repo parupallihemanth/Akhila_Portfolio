@@ -72,9 +72,9 @@ function Navbar() {
       >
 
         
-        <Tab value={ value} className={classes.tab} component={Link} to="about" spy={true} smooth={true}  offset={0}  duration={1000} label="About" disableRipple />
-        <Tab value={ value} className={classes.tab} component={Link} to="experience" spy={true} smooth={true}  offset={-30}  duration={1000} label="Experience" disableRipple />
-        <Tab value={ value} className={classes.tab} component={Link} to="contact" spy={true} smooth={true}  offset={0}  duration={800} label="Contact" disableRipple />
+        <Tab  className={classes.tab} component={Link} to="about" spy={true} smooth={true}  offset={0}  duration={1000} label="About" disableRipple />
+        <Tab  className={classes.tab} component={Link} to="experience" spy={true} smooth={true}  offset={-30}  duration={1000} label="Experience" disableRipple />
+        <Tab  className={classes.tab} component={Link} to="contact" spy={true} smooth={true}  offset={0}  duration={800} label="Contact" disableRipple />
       </Tabs>
         </Toolbar>
       </AppBar>
