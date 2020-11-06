@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) =>({
     },
     tab : {
         textTransform : 'none',
+        textDecoration:'none',
         fontSize : '1.25em',
         fontWeight : 'bold',
         color : '#fff',
@@ -54,7 +55,7 @@ function Navbar() {
     const matchMD = useMediaQuery(theme.breakpoints.down("md"))
     const matchSM = useMediaQuery(theme.breakpoints.down("sm"))
 
-    const [ value, setValue ] = useState(0);
+    const [ value, setValue ] = useState(1);
 
     return (
         <AppBar position="fixed" className={ classes.appbar} >
@@ -65,14 +66,15 @@ function Navbar() {
             className={classes.tabsContainer}
             indicatorColor="primary"
             textColor="primary"
-            
+            onChange={ (event, newValue) =>setValue(newValue)}
+            value={value}
             aria-label="disabled tabs example"
       >
 
         
-        <Tab index={0} className={classes.tab} component={Link} to="about" spy={true} smooth={true}  offset={0}  duration={1000} label="About" disableRipple />
-        <Tab index={1} className={classes.tab} component={Link} to="experience" spy={true} smooth={true}  offset={-30}  duration={1000} label="Experience" disableRipple />
-        <Tab index={2} className={classes.tab} component={Link} to="contact" spy={true} smooth={true}  offset={0}  duration={800} label="Contact" disableRipple />
+        <Tab value={ value} className={classes.tab} component={Link} to="about" spy={true} smooth={true}  offset={0}  duration={1000} label="About" disableRipple />
+        <Tab value={ value} className={classes.tab} component={Link} to="experience" spy={true} smooth={true}  offset={-30}  duration={1000} label="Experience" disableRipple />
+        <Tab value={ value} className={classes.tab} component={Link} to="contact" spy={true} smooth={true}  offset={0}  duration={800} label="Contact" disableRipple />
       </Tabs>
         </Toolbar>
       </AppBar>
