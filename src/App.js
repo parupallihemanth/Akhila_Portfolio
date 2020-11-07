@@ -8,7 +8,7 @@ import Contact from './components/ContactMe'
 function App() {
   return (
     <div >
-      <Navbar />
+      {/* <Navbar /> */}
       <Header />
       <AboutMe />
       <Experiences />
